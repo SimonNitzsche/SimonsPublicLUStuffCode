@@ -23,9 +23,9 @@ class Parser {
         }
     }
     parse(completedMissions, input) {
-        let result = false;
+        let result = true;
         let buffer = "";
-        let mode = "OR";
+        let mode = "AND";
         console.log(input);
 
         if(this.openBrackets > this.openBracketsLimit) {
