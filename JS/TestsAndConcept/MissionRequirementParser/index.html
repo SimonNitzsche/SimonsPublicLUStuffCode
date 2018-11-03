@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Mission Requirement Parser</title>
+        <script src="parser.js" charset="utf-8"></script>
+    </head>
+    <body>
+        <h1>Completed Missions</h1>
+        <textarea name="inputCM" rows="8" cols="80">
+229
+814
+        </textarea>
+        <h1>Input MRP</h1>
+        <textarea name="inputMRP" rows="1" cols="80">
+(509|229)&(812|813|814|815)
+        </textarea>
+        <h1>Output</h1>
+        <textarea name="output" rows="8" cols="80">
+        </textarea>
+
+        <button type="button" name="parse" onclick="doSomeParsing()">Parse</button>
+
+        <script type="text/javascript">
+            function doSomeParsing() {
+                let inputCM = document.querySelector("textarea[name='inputCM']").value.split(" ").join("").split("\n");
+                let inputMRP = document.querySelector("textarea[name='inputMRP']").value.split(" ").join("").split("\n").join("").replace("&amp;", "&");
+                let outputObject = document.querySelector("textarea[name='output']");
+                const parser = new Parser();
+                try {
+                    let r = parser.parse(inputCM, inputMRP);
+                    console.log("Output: "+r);
+                    outputObject.value = r;
+                } catch(ex) {
+                    outputObject.value=ex;
+                }
+            }
+        </script>
+    </body>
+</html>
