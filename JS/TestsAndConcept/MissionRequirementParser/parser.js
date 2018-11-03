@@ -63,7 +63,7 @@ class Parser {
                         // We now know we are in an inner loop for MRP
                         return this.combine(result, this.hasMissionCompleted(completedMissions, buffer), mode);
                     }
-                    this.openBrackets--;
+                    (this.openBrackets<=0) ? (this.openBrackets=0) : this.openBrackets--;
                     break;
                 }
                 case "0":
