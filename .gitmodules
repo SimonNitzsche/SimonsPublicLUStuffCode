@@ -1,0 +1,3 @@
+[submodule "C++/LDD_GeometryConverter"]
+	path = C++/LDD_GeometryConverter
+	url = https://github.com/SimonNitzsche/LDD_GeometryConverter
